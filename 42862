@@ -1,0 +1,22 @@
+#프로그래머스 체육복 
+#https://programmers.co.kr/learn/courses/30/lessons/42862
+
+def solution(n, lost, reserve):
+    #여분있는 데, 털린 친구 ~
+    array =[]
+    for i in lost:
+        if i in reserve:
+            array.append(i)
+
+    for i in array:
+        lost.remove(i)
+        reserve.remove(i)
+
+    for i in reserve:
+        if i-1 in lost:
+            lost.remove(i-1)
+        elif i+1 in lost:
+            lost.remove(i+1)
+
+    answer = n - len(lost)
+    return answer
