@@ -1,0 +1,22 @@
+#https://programmers.co.kr/learn/courses/30/lessons/42584
+
+def solution(p):
+    answer = []
+
+    index = 0
+    p_size = len(p)
+
+    while index < p_size:
+        fl = False
+        i = index
+        while True:
+            if i == p_size-1:
+                answer.append(i-index)
+                break
+            if p[index] > p[i]:
+                answer.append(i-index)
+                break
+            i += 1
+        index += 1
+
+    return answer
