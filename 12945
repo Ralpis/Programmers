@@ -1,0 +1,25 @@
+#1번 
+def solution(n):
+    answer = 0
+    tmp = [0,1,1]
+    
+    for i in range(3,n+1):def solution(n):
+    answer = 0
+    b = 1
+    for i in range(n):
+        answer, b = b, answer+b
+    return answer%1234567
+        tmp.append(tmp[i-2] + tmp[i-1])
+    
+    answer = tmp[n]%1234567
+    
+    return answer
+    
+    
+#2번 
+def solution(n):
+    answer = 0
+    b = 1
+    for i in range(n):
+        answer, b = b, answer+b
+    return answer%1234567
