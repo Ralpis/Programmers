@@ -1,0 +1,23 @@
+
+
+import heapq
+
+def solution(s, K):
+    h = []
+    for i in s:
+        heapq.heappush(h, i)
+    cnt = 0 
+    while True:
+        if len(h) == 0 or len(h) == 1:
+            if heapq.heappop(h) < K:  
+                return -1
+            else:
+                return cnt
+        a = heapq.heappop(h)
+        if a >= K:
+            return cnt
+        else:
+            b = heapq.heappop(h)
+            heapq.heappush(h, a+b*2)
+        cnt += 1
+    
