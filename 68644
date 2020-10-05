@@ -1,0 +1,15 @@
+
+def solution(n):
+    tmp = [0 for _ in range(200)]
+    
+    s = len(n)
+    for i in range(s):
+        for j in range(s):
+            if i!=j:
+                tmp[n[i]+n[j]] += 1
+ 
+    x = []
+    for i in range(200):
+        if tmp[i] != 0:
+            x.append(i)
+    return x
