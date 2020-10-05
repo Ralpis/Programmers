@@ -1,4 +1,18 @@
+#1
+def solution(n):
+    answer = []
 
+    s = len(n)
+    for i in range(s):
+        for j in range(i+1,s):
+            answer.append(n[i]+n[j])
+    
+            
+    return sorted(list(set(answer)))
+
+
+
+#2
 def solution(n):
     tmp = [0 for _ in range(200)]
     
@@ -7,9 +21,8 @@ def solution(n):
         for j in range(s):
             if i!=j:
                 tmp[n[i]+n[j]] += 1
- 
-    x = []
+                
     for i in range(200):
         if tmp[i] != 0:
-            x.append(i)
-    return x
+            tmp.append(i)
+    return tmp[200::]
