@@ -27,6 +27,9 @@ begin	target	words	return
 target인 "cog"는 words 안에 없기 때문에 변환할 수 없습니다.
 
 """
+begin = "hit"
+target = "cog"
+words = ["hot", "dot", "dog", "lot", "log", "cog"]
 
 
 def solution(begin, target, words):
@@ -38,6 +41,7 @@ def solution(begin, target, words):
             if word_1 == target:
                 return answer
             for word_2_idx in range(len(words)-1, -1, -1):
+                print(word_1, words[word_2_idx])
                 word_2 = words[word_2_idx]
                 difference = sum([x != y for x, y in zip(word_1, word_2)])
                 if difference == 1:
@@ -46,3 +50,6 @@ def solution(begin, target, words):
             return 0
         queue = tmp_q
         answer += 1
+
+
+print(solution(begin, target, words))
