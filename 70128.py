@@ -22,8 +22,4 @@ a와 b의 내적은 (-1)*1 + 0*0 + 1*(-1) = -2 입니다.
 
 
 def solution(a, b):
-    answer = 0
-    for i in range(len(a)):
-        answer += a[i]*b[i]
-
-    return answer
+    return sum([x*y for x, y in zip(a, b)])
